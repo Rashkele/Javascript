@@ -19,3 +19,29 @@ const users = [
   { id: '8', name: 'Simon Peterson', age: 30 },
   { id: '9', name: 'Daniel Cane', age: 51 },
 ];
+
+const namesArray = users.map(
+  (user) => user.name
+);
+console.log(namesArray);
+
+const ageArray = users.map(
+  (user) => user.age
+);
+// let userAverageAge = ageArray.reduce((prev, next) => {
+//   return (prev + next) / ageArray.length;
+// }, 0);
+// console.log(userAverageAge);
+
+// let userAverageAge = ageArray.reduce((prev, next) => {
+//   return (prev + next) / ageArray.length;
+// }, 0);
+// console.log(userAverageAge);
+
+// const grades = [80, 77, 88, 95, 68];
+function getAvg(ageArray) {
+  const total = ageArray.reduce((acc, c) => acc + c, 0);
+  return total / ageArray.length;
+}
+const averageAge = getAvg(ageArray);
+console.log(averageAge);
